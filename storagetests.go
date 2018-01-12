@@ -10,10 +10,10 @@ import (
 )
 
 // CreateFunc represents function which must return created storage object
-type CreateFunc func() storage.Storage
+type CreateFunc func() storage.Interface
 
 // LoadFromConfigFunc represents test function which return storage configured from JSON config
-type LoadFromConfigFunc func(b []byte) (storage.Storage, error)
+type LoadFromConfigFunc func(b []byte) (storage.Interface, error)
 
 // Func represents test function for single test-case
 type Func func(t *testing.T, c CreateFunc, l LoadFromConfigFunc, is *assert.Assertions)
